@@ -1,5 +1,6 @@
 const express= require('express');
 const app= express();
+const port = process.env.PORT || 5000;
 const nav=[
     {link:'/books',name:'Books'},
     {link:'/authors',name:'Authors'},
@@ -17,7 +18,7 @@ const addbooksRouter=require('./src/routes/addbookRoutes')(nav);
 const addauthorRouter=require('./src/routes/addauthorRoutes')(nav);
 
 
-
+app.use(express.urlencoded({extended:true}));
 app.use(express.static('./public'));
 app.set('view engine','ejs');
 app.set('views','./src/views');
@@ -37,4 +38,4 @@ app.get('/',function(req,res){
 });
 
 
-app.listen(5000);
+app.listen(port,()=>{console.log("Server Ready at" +port)});
