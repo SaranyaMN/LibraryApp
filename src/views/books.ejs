@@ -23,25 +23,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">Home</a>
+      <a href="/welcome" class="navbar-brand">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-          <%for(i=0;i<nav.length;i++){%>
+        <%for(i=0; i<nav4.length; i++){%>
         <li>
-          <a href="<%=nav[i].link%>"><%=nav[i].name%><%=nav[i].add%></a>
+          <a href="<%=nav4[i].link%>"><%=nav4[i].name%></a>
         </li>
         <%}%>
-      </ul>
-      <ul class="nav navbar-right navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-          <ul class="dropdown-menu" style="padding:12px;">
-            <form class="form-inline">
-              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-            </form>
-          </ul>
-        </li>
       </ul>
     </nav>
   </div>
@@ -94,7 +84,7 @@
           <div class="row">    
             <br>
             <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="/images/<%=books[i].img%>" style="width:100px;height:100px" class="img-circle"></a>
+              <a class="story-title" href="/books/<%=i%>"><img alt="" src="/images/<%=books[i].image%>" style="width:100px;height:100px" class="img-circle"></a>
             </div>
             <div class="col-md-10 col-sm-9">
               <h3><%=books[i].title%></h3>
@@ -110,18 +100,10 @@
             </div>
           </div>
           <%}%>
-          <hr>
+          <hr>          
           <!--/stories-->
-          
-          
-          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
-        
-          
         </div>
-      </div>
-                                                                                       
-	                                                
-                                                      
+      </div>                                  
    	</div><!--/col-12-->
   </div>
 </div>
@@ -159,9 +141,6 @@
           <li><i class="icon-pinterest icon-2x"></i></li>
         </ul>
         
-      </div>
-      <div class="col-sm-6">
-          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
       </div>
     </div>
   </div>

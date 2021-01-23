@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title><%=title%></title>
+		<title>Welcome</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,13 +23,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">Home</a>
+      <a href="/welcome" class="navbar-brand">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <%for(i=0; i<nav1.length; i++){%>
+        <%for(i=0; i<nav4.length; i++){%>
         <li>
-          <a href="<%=nav1[i].link%>"><%=nav1[i].name%></a>
+          <a href="<%=nav4[i].link%>"><%=nav4[i].name%></a>
         </li>
         <%}%>
       </ul>
@@ -41,7 +41,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1><%=title%>
+        <h1>Welcome
           <p class="lead"></p>
         </h1>
       </div>
@@ -50,20 +50,6 @@
 </div>
                                                                            
 <hr>
-
-<div class="container" id="footer">
-  <div class="row">
-    <div class="col col-sm-12">
-      
-      <h1>To explore more</h1>
-      <div class="btn-group">
-        <%for(i=0; i<nav1.length; i++){%>
-        <a class="btn btn-facebook btn-lg" href="<%=nav1[i].link%>"><%=nav1[i].name%></a>
-        <%}%>
-      </div>
-    </div>
-  </div>
-</div>
 
 <hr>
 

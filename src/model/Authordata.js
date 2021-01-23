@@ -6,14 +6,13 @@ mongoose.connect('mongodb+srv://userone:userone@ictakfiles.xrhgc.mongodb.net/LIB
 
 //Schema definition
 const Schema = mongoose.Schema;
-//for single book
-const BookSchema = new Schema({
-    title: String,
-    author: String,
+
+const AuthorSchema = new Schema({
+    name: String,
+    book: String,
     genre: String,
     image: String
 });
-
 //Model creation
-var Bookdata = mongoose.model('bookdata', BookSchema);
-module.exports = Bookdata;
+var Authordata = mongoose.model('authordata', AuthorSchema);
+module.exports = Authordata;

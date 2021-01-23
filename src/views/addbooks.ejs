@@ -23,25 +23,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">Home</a>
+      <a href="/welcome" class="navbar-brand">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <%for(i=0;i<nav.length;i++){%>
-          <li>
-            <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
-          </li>
-        <%}%>
-      </ul>
-      <ul class="nav navbar-right navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-          <ul class="dropdown-menu" style="padding:12px;">
-            <form class="form-inline">
-              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-            </form>
-          </ul>
+        <%for(i=0; i<nav4.length; i++){%>
+        <li>
+          <a href="<%=nav4[i].link%>"><%=nav4[i].name%></a>
         </li>
+        <%}%>
       </ul>
     </nav>
   </div>
@@ -51,7 +41,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Add Book
+        <h1>Add a New Book
           <p class="lead"></p>
         </h1>
       </div>
@@ -89,31 +79,37 @@
           
           
           
-          <!--add book-->
-          
-            <div class="row">
-              <form method="POST" action="/addbooks/add">
-              <!-- <form method="GET" action="/addbooks/add"> -->
-                  Title: <input type="text" name="title"><br><br>
-                  Author: <input type="text" name="author"><br><br>
-                  Genre: <input type="text" name="genre"><br><br>
-                  Img: <input type="file" name="img"><br>
-                  <button type="submit">Add Book</button><br>
-              </form>
+          <!--/stories-->
+          <form method="POST" action = "/bookform/add" onsubmit="return validate();" enctype="multipart/form-data">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" placeholder="Enter Book Title" id="title" name="title" onkeyup="valid_title();">
+                <p id="p1"></p>
+              </div>
+            </div>
+            <div class="form-group col-md-12 field">
+              <label for="inputPassword4">Author</label>
+              <input type="text" class="form-control" placeholder="Enter Book Author" id="author" name="author" onkeyup="valid_author();">
+              <p id="p2"></p>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="inputAddress">Genre</label>
+              <input type="text" class="form-control" id="genre" placeholder="Enter Book Genre" name="genre" onkeyup="valid_genre();">
+              <p id="p3"></p>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="input-group-text" for="inputGroupFile02">Upload Book Image</label>
+              <input type="file" class="form-control" id="inputGroupFile02" name="image" accept="image/*" required>
+            </div>
+            <div class="form-group col-md-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
           </div>
-          <hr>
-          
-          <!--/add book-->
-          
-          
-          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
-        
-          
+          </form>
+          <hr>          
+          <!--/stories-->
         </div>
-      </div>
-                                                                                       
-	                                                
-                                                      
+      </div>                                  
    	</div><!--/col-12-->
   </div>
 </div>
@@ -152,14 +148,12 @@
         </ul>
         
       </div>
-      <div class="col-sm-6">
-          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
-      </div>
     </div>
   </div>
 </footer>
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script3.js"></script>
 	</body>
 </html>
